@@ -1,11 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class MyMario extends StatelessWidget {
+class JumpingMario extends StatelessWidget {
   final direction;
-  final midrun;
 
-  MyMario({this.direction, this.midrun});
+  JumpingMario({this.direction});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +12,7 @@ class MyMario extends StatelessWidget {
       return Container(
         width: 50,
         height: 50,
-        child: midrun
-            ? Image.asset('lib/images/marioStand.png')
-            : Image.asset('lib/images/marioWalk.png'),
+        child: Image.asset('lib/images/mariojump.png'),
       );
     } else {
       return Transform(
@@ -24,9 +21,7 @@ class MyMario extends StatelessWidget {
         child: Container(
           width: 50,
           height: 50,
-          child: midrun
-              ? Image.asset('lib/images/marioStand.png')
-              : Image.asset('lib/images/marioWalk.png'),
+          child: Image.asset('lib/images/mariojump.png'),
         ),
       );
     }
