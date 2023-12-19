@@ -5,6 +5,8 @@ import 'package:supermario/mario.dart';
 import 'button.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -27,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   void jump() {
     midjump = true;
     preJump();
-    Timer.periodic(Duration(milliseconds: 50), (timer) {
+    Timer.periodic(const Duration(milliseconds: 50), (timer) {
       time += 0.05;
       height = -4.9 * time * time + 5 * time;
 
@@ -72,7 +74,7 @@ class _HomePageState extends State<HomePage> {
               color: Colors.blue,
               child: AnimatedContainer(
                 alignment: Alignment(marioX, marioY),
-                duration: Duration(milliseconds: 0),
+                duration: const Duration(milliseconds: 0),
                 child: midjump
                     ? JumpingMario(
                         direction: direction,
@@ -91,25 +93,25 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   MyButton(
-                    child: Icon(
+                    function: moveLeft,
+                    child: const Icon(
                       Icons.arrow_back,
                       color: Colors.white,
                     ),
-                    function: moveLeft,
                   ),
                   MyButton(
-                    child: Icon(
+                    function: jump,
+                    child: const Icon(
                       Icons.arrow_upward,
                       color: Colors.white,
                     ),
-                    function: jump,
                   ),
                   MyButton(
-                    child: Icon(
+                    function: moveRight,
+                    child: const Icon(
                       Icons.arrow_forward,
                       color: Colors.white,
                     ),
-                    function: moveRight,
                   ),
                 ]),
           ),

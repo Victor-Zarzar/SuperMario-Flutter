@@ -5,7 +5,7 @@ class MyButton extends StatelessWidget {
   final function;
   static bool holdingButton = false;
 
-  MyButton({this.child, this.function});
+  const MyButton({super.key, this.child, this.function});
 
   bool userIsHoldingButtons() {
     return holdingButton;
@@ -24,7 +24,7 @@ class MyButton extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           color: Colors.brown[300],
           child: child,
         ),
